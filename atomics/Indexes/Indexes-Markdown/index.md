@@ -48,7 +48,8 @@
 - T1574.007 Path Interception by PATH Environment Variable [CONTRIBUTE A TEST](https://github.com/redcanaryco/atomic-red-team/wiki/Contributing)
 - [T1006 Direct Volume Access](../../T1006/T1006.md)
   - Atomic Test #1: Read volume boot sector via DOS device path (PowerShell) [windows]
-- T1564.008 Email Hiding Rules [CONTRIBUTE A TEST](https://github.com/redcanaryco/atomic-red-team/wiki/Contributing)
+- [T1564.008 Hide Artifacts: Email Hiding Rules](../../T1564.008/T1564.008.md)
+  - Atomic Test #1: New-Inbox Rule to Hide E-mail in M365 [azure-ad]
 - T1027.013 Encrypted/Encoded File [CONTRIBUTE A TEST](https://github.com/redcanaryco/atomic-red-team/wiki/Contributing)
 - [T1014 Rootkit](../../T1014/T1014.md)
   - Atomic Test #1: Loadable Kernel Module based Rootkit [linux]
@@ -83,6 +84,7 @@
   - Atomic Test #24: Disable UAC - Switch to the secure desktop when prompting for elevation via registry key [windows]
   - Atomic Test #25: Disable UAC notification via registry keys [windows]
   - Atomic Test #26: Disable ConsentPromptBehaviorAdmin via registry keys [windows]
+  - Atomic Test #27: UAC bypassed by Utilizing ProgIDs registry. [windows]
 - [T1548.003 Abuse Elevation Control Mechanism: Sudo and Sudo Caching](../../T1548.003/T1548.003.md)
   - Atomic Test #1: Sudo usage [macos, linux]
   - Atomic Test #2: Sudo usage (freebsd) [linux]
@@ -275,7 +277,8 @@
 - [T1620 Reflective Code Loading](../../T1620/T1620.md)
   - Atomic Test #1: WinPwn - Reflectively load Mimik@tz into memory [windows]
 - T1564.011 Ignore Process Interrupts [CONTRIBUTE A TEST](https://github.com/redcanaryco/atomic-red-team/wiki/Contributing)
-- T1497.003 Time Based Evasion [CONTRIBUTE A TEST](https://github.com/redcanaryco/atomic-red-team/wiki/Contributing)
+- [T1497.003 Time Based Evasion](../../T1497.003/T1497.003.md)
+  - Atomic Test #1: Delay execution with ping [linux, macos]
 - [T1218.003 Signed Binary Proxy Execution: CMSTP](../../T1218.003/T1218.003.md)
   - Atomic Test #1: CMSTP Executing Remote Scriptlet [windows]
   - Atomic Test #2: CMSTP Executing UAC Bypass [windows]
@@ -441,7 +444,8 @@
   - Atomic Test #1: Clear Logs [windows]
   - Atomic Test #2: Delete System Logs Using Clear-EventLog [windows]
   - Atomic Test #3: Clear Event Logs via VBA [windows]
-- T1222 File and Directory Permissions Modification [CONTRIBUTE A TEST](https://github.com/redcanaryco/atomic-red-team/wiki/Contributing)
+- [T1222 File and Directory Permissions Modification](../../T1222/T1222.md)
+  - Atomic Test #1: Enable Local and Remote Symbolic Links via fsutil [windows]
 - T1548 Abuse Elevation Control Mechanism [CONTRIBUTE A TEST](https://github.com/redcanaryco/atomic-red-team/wiki/Contributing)
 - [T1134.002 Create Process with Token](../../T1134.002/T1134.002.md)
   - Atomic Test #1: Access Token Manipulation [windows]
@@ -487,6 +491,7 @@
   - Atomic Test #1: Creating W32Time similar named service using schtasks [windows]
   - Atomic Test #2: Creating W32Time similar named service using sc [windows]
   - Atomic Test #3: linux rename /proc/pid/comm using prctl [linux]
+  - Atomic Test #4: Hiding a malicious process with bind mounts [linux]
 - [T1055.004 Process Injection: Asynchronous Procedure Call](../../T1055.004/T1055.004.md)
   - Atomic Test #1: Process Injection via C# [windows]
   - Atomic Test #2: EarlyBird APC Queue Injection in Go [windows]
@@ -747,6 +752,7 @@
   - Atomic Test #8: Delete Filesystem - Linux [linux]
   - Atomic Test #9: Delete Prefetch File [windows]
   - Atomic Test #10: Delete TeamViewer Log Files [windows]
+  - Atomic Test #11: Clears Recycle bin via rd [windows]
 - [T1221 Template Injection](../../T1221/T1221.md)
   - Atomic Test #1: WINWORD Remote Template Injection [windows]
 - T1134 Access Token Manipulation [CONTRIBUTE A TEST](https://github.com/redcanaryco/atomic-red-team/wiki/Contributing)
@@ -856,6 +862,7 @@
   - Atomic Test #8: Import XML Schedule Task with Hidden Attribute [windows]
   - Atomic Test #9: PowerShell Modify A Scheduled Task [windows]
   - Atomic Test #10: Scheduled Task ("Ghost Task") via Registry Key Manipulation [windows]
+  - Atomic Test #11: Scheduled Task Persistence via CompMgmt.msc [windows]
 - T1037 Boot or Logon Initialization Scripts [CONTRIBUTE A TEST](https://github.com/redcanaryco/atomic-red-team/wiki/Contributing)
 - T1574.007 Path Interception by PATH Environment Variable [CONTRIBUTE A TEST](https://github.com/redcanaryco/atomic-red-team/wiki/Contributing)
 - [T1546.013 Event Triggered Execution: PowerShell Profile](../../T1546.013/T1546.013.md)
@@ -892,6 +899,7 @@
   - Atomic Test #24: Disable UAC - Switch to the secure desktop when prompting for elevation via registry key [windows]
   - Atomic Test #25: Disable UAC notification via registry keys [windows]
   - Atomic Test #26: Disable ConsentPromptBehaviorAdmin via registry keys [windows]
+  - Atomic Test #27: UAC bypassed by Utilizing ProgIDs registry. [windows]
 - [T1548.003 Abuse Elevation Control Mechanism: Sudo and Sudo Caching](../../T1548.003/T1548.003.md)
   - Atomic Test #1: Sudo usage [macos, linux]
   - Atomic Test #2: Sudo usage (freebsd) [linux]
@@ -1245,6 +1253,7 @@
   - Atomic Test #8: Import XML Schedule Task with Hidden Attribute [windows]
   - Atomic Test #9: PowerShell Modify A Scheduled Task [windows]
   - Atomic Test #10: Scheduled Task ("Ghost Task") via Registry Key Manipulation [windows]
+  - Atomic Test #11: Scheduled Task Persistence via CompMgmt.msc [windows]
 - [T1047 Windows Management Instrumentation](../../T1047/T1047.md)
   - Atomic Test #1: WMI Reconnaissance Users [windows]
   - Atomic Test #2: WMI Reconnaissance Processes [windows]
@@ -1412,6 +1421,7 @@
   - Atomic Test #8: Import XML Schedule Task with Hidden Attribute [windows]
   - Atomic Test #9: PowerShell Modify A Scheduled Task [windows]
   - Atomic Test #10: Scheduled Task ("Ghost Task") via Registry Key Manipulation [windows]
+  - Atomic Test #11: Scheduled Task Persistence via CompMgmt.msc [windows]
 - T1205.002 Socket Filters [CONTRIBUTE A TEST](https://github.com/redcanaryco/atomic-red-team/wiki/Contributing)
 - T1037 Boot or Logon Initialization Scripts [CONTRIBUTE A TEST](https://github.com/redcanaryco/atomic-red-team/wiki/Contributing)
 - [T1556.003 Modify Authentication Process: Pluggable Authentication Modules](../../T1556.003/T1556.003.md)
@@ -1871,6 +1881,7 @@
   - Atomic Test #30: Arbitrary file download using the Notepad++ GUP.exe binary [windows]
   - Atomic Test #31: File download via nscurl [macos]
   - Atomic Test #32: File Download with Sqlcmd.exe [windows]
+  - Atomic Test #33: Remote File Copy using PSCP [windows]
 - T1665 Hide Infrastructure [CONTRIBUTE A TEST](https://github.com/redcanaryco/atomic-red-team/wiki/Contributing)
 - [T1001.002 Data Obfuscation via Steganography](../../T1001.002/T1001.002.md)
   - Atomic Test #1: Steganographic Tarball Embedding [windows]
@@ -1896,6 +1907,7 @@
   - Atomic Test #8: Data Encrypted with zip and gpg symmetric [linux, macos]
   - Atomic Test #9: Encrypts collected data with AES-256 and Base64 [linux, macos]
   - Atomic Test #10: ESXi - Remove Syslog remote IP [windows]
+  - Atomic Test #11: Compress a File for Exfiltration using Makecab [windows]
 - [T1113 Screen Capture](../../T1113/T1113.md)
   - Atomic Test #1: Screencapture [macos]
   - Atomic Test #2: Screencapture (silent) [macos]
@@ -2470,7 +2482,8 @@
 - [T1010 Application Window Discovery](../../T1010/T1010.md)
   - Atomic Test #1: List Process Main Windows - C# .NET [windows]
 - T1087.003 Email Account [CONTRIBUTE A TEST](https://github.com/redcanaryco/atomic-red-team/wiki/Contributing)
-- T1497.003 Time Based Evasion [CONTRIBUTE A TEST](https://github.com/redcanaryco/atomic-red-team/wiki/Contributing)
+- [T1497.003 Time Based Evasion](../../T1497.003/T1497.003.md)
+  - Atomic Test #1: Delay execution with ping [linux, macos]
 - [T1580 Cloud Infrastructure Discovery](../../T1580/T1580.md)
   - Atomic Test #1: AWS - EC2 Enumeration from Cloud Instance [linux, macos, iaas:aws]
   - Atomic Test #2: AWS - EC2 Security Group Enumeration [iaas:aws]
@@ -2535,6 +2548,7 @@
   - Atomic Test #6: Discover Specific Process - tasklist [windows]
   - Atomic Test #7: Process Discovery - Process Hacker [windows]
   - Atomic Test #8: Process Discovery - PC Hunter [windows]
+  - Atomic Test #9: Launch Taskmgr from cmd to View running processes [windows]
 - T1497.002 User Activity Based Checks [CONTRIBUTE A TEST](https://github.com/redcanaryco/atomic-red-team/wiki/Contributing)
 - [T1069.001 Permission Groups Discovery: Local Groups](../../T1069.001/T1069.001.md)
   - Atomic Test #1: Permission Groups Discovery (Local) [linux, macos]
@@ -2571,6 +2585,7 @@
   - Atomic Test #2: Query Registry with Powershell cmdlets [windows]
   - Atomic Test #3: Enumerate COM Objects in Registry with Powershell [windows]
   - Atomic Test #4: Reg query for AlwaysInstallElevated status [windows]
+  - Atomic Test #5: Check Software Inventory Logging (SIL) status via Registry [windows]
 - [T1614 System Location Discovery](../../T1614/T1614.md)
   - Atomic Test #1: Get geolocation info through IP-Lookup services using curl Windows [windows]
   - Atomic Test #2: Get geolocation info through IP-Lookup services using curl freebsd, linux or macos [macos, linux]
